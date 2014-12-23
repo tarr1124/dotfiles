@@ -1,0 +1,22 @@
+# for updating
+update
+upgrade
+
+# Install HomebrewCask
+tap caskroom/cask
+tap caskroom/versions
+install caskroom/cask/brew-cask
+
+# tool
+install hub
+
+# language
+cask install java
+
+# install tools
+cask install google-chrome
+cask install karabiner
+cask install android-studio
+
+cleanup
+cask cleanup
