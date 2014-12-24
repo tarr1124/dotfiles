@@ -7,8 +7,11 @@ tap caskroom/cask
 tap caskroom/versions
 install caskroom/cask/brew-cask
 
-# tool
+# tools
 install hub
+
+# libraries
+install openssl
 
 # language
 cask install java
