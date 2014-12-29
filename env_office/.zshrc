@@ -8,6 +8,8 @@ autoload -U compinit; compinit
 # export GOPATH=$HOME/go
 # export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
+export PATH=$PATH:$HOME/tarr_env/utils/bin
+
 function peco-select-history() {
     local tac
     if which tac > /dev/null; then
