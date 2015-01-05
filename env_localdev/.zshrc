@@ -3,10 +3,11 @@
 # 例： `cd path/to/<Tab>`, `ls -<Tab>`
 autoload -U compinit; compinit
 
-# export GOROOT=/usr/local/go
-# export GOROOT=/usr/local/opt/go/libexec ## for mac
-# export GOPATH=$HOME/go
-# export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
+export PATH=$PATH:$HOME/tarr_env/utils/bin
 
 function peco-select-history() {
     local tac
