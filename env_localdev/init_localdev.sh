@@ -1,6 +1,6 @@
 #!/bin/bash -x
 
-DOT_FILES=( .vimrc .zshrc )
+DOT_FILES=( .vimrc .zshrc .zshenv)
 
 mkdir -p $HOME/tarr_env/backups
 mkdir -p $HOME/tarr_env/utils

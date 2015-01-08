@@ -3,6 +3,18 @@
 # 例： `cd path/to/<Tab>`, `ls -<Tab>`
 autoload -U compinit; compinit
 
+# cd した先のディレクトリをディレクトリスタックに追加する
+# ディレクトリスタックとは今までに行ったディレクトリの履歴のこと
+# `cd +<Tab>` でディレクトリの履歴が表示され、そこに移動できる
+setopt auto_pushd
+
+# pushd したとき、ディレクトリがすでにスタックに含まれていればスタックに追加しない
+setopt pushd_ignore_dups
+
+# 入力したコマンドがすでにコマンド履歴に含まれる場合、履歴から古いほうのコマンドを削除する
+# コマンド履歴とは今まで入力したコマンドの一覧のことで、上下キーでたどれる
+setopt hist_ignore_all_dups
+
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
