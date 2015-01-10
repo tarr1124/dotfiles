@@ -1,25 +1,32 @@
 # for updating
-update
-upgrade
+update || true
+upgrade || true
 
 # Install HomebrewCask
-tap caskroom/cask
-tap caskroom/versions
-install caskroom/cask/brew-cask
+tap caskroom/cask || true
+tap caskroom/versions || true
+tap peco/peco
+install caskroom/cask/brew-cask || true
 
 # tools
-install hub
+install hub || true
+install peco || true
 
 # libraries
-install openssl
+install openssl || true
+install wget || true 
 
 # language
-cask install java
+cask install java || true
 
-# install tools
-cask install google-chrome
-cask install karabiner
-cask install android-studio
+# install tools || true
+cask install google-chrome || true
+cask install karabiner || true
+cask install android-studio || true
+cask install appcleaner || true
+cask install vlc || true
+cask install the-unarchiver || true
+cask install evernote || true
 
-cleanup
-cask cleanup
+cleanup || true
+cask cleanup || true
