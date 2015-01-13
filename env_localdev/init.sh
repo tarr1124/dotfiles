@@ -1,3 +1,3 @@
 #!/bin/bash -x
 
-. `dirname $0`/../lib/install_peco.sh
+. $FILE_PATH/lib/install_peco.sh

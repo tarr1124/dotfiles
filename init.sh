@@ -1,5 +1,8 @@
 #!/bin/bash -x
 
+DOTFILES_ENV=$1
+FILE_PATH=`dirname $0`
+
 mkdir -p $HOME/tarr_env/backups
 mkdir -p $HOME/tarr_env/utils
 mkdir -p $HOME/tarr_env/utils/bin
@@ -13,8 +16,8 @@ do
 	ln -s $HOME/dotfiles/$file $HOME/$file
 done
 
-for name in `find ./$DOTFILE_ENV -type f | gawk -F/ '{print $NF}'`
-do if [ ! -e ./$name ] ; then
+for name in `find $FILE_PATH/$DOTFILES_ENV -type f | gawk -F/ '{print $NF}'`
+do if [ ! -e $FILE_PATH/$name ] ; then
 	ENV_FILES+=($name)
 fi
 done
@@ -22,8 +25,8 @@ done
 for file in ${ENV_FILES[@]}
 do
         mv $HOME/$file $HOME/tarr_env/backups/$file.`date +%Y%m%d`
-        ln -s $HOME/dotfiles/DOTFILE_ENV/$file $HOME/$file
+        ln -s $HOME/dotfiles/$DOTFILES_ENV/$file $HOME/$file
 done
 
 
-. `dirname $0`/$DOTFILES_ENV/init.sh
+. $FILE_PATH/$DOTFILES_ENV/init.sh
