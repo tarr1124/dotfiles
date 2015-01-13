@@ -15,12 +15,6 @@ setopt pushd_ignore_dups
 # コマンド履歴とは今まで入力したコマンドの一覧のことで、上下キーでたどれる
 setopt hist_ignore_all_dups
 
-export GOROOT=/usr/local/go
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
-
-export PATH=$PATH:$HOME/tarr_env/utils/bin
-
 function peco-select-history() {
     local tac
     if which tac > /dev/null; then
@@ -37,3 +31,5 @@ function peco-select-history() {
 }
 zle -N peco-select-history
 bindkey '^r' peco-select-history
+
+[ -f $DOTFILES_ENV/.zshrc ] && source $DOTFILES_ENV/.zshrc

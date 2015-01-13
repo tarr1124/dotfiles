@@ -9,3 +9,5 @@ set wrapscan
 set smartcase
 set ignorecase
 set showmatch
+
+[ -f $DOTFILES_ENV/.vimrc ] && source $DOTFILES_ENV/.vimrc
