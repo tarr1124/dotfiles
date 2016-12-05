@@ -9,3 +9,4 @@ set wrapscan
 set smartcase
 set ignorecase
 set showmatch
+set paste
