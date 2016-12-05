@@ -1,3 +1,7 @@
+# promptの設定
+PROMPT='# '
+RPROMPT='[%d]'
+
 # 自動補完を有効にする
 # コマンドの引数やパス名を途中まで入力して <Tab> を押すといい感じに補完してくれる
 # 例： `cd path/to/<Tab>`, `ls -<Tab>`
@@ -15,9 +19,14 @@ setopt pushd_ignore_dups
 # コマンド履歴とは今まで入力したコマンドの一覧のことで、上下キーでたどれる
 setopt hist_ignore_all_dups
 
-
-PROMPT='# '
-RPROMPT='[%d]'
+# gitでcurrent branchを打たなくて済む設定
+# git push origin B
+# git pull origin B
+function git_current_branch_name()
+{
+  git branch | grep '^\*' | sed 's/^\* *//'
+}
+alias -g B='"$(git_current_branch_name)"'
 
 function peco-select-history() {
     local tac
