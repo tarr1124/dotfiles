@@ -15,6 +15,10 @@ setopt pushd_ignore_dups
 # コマンド履歴とは今まで入力したコマンドの一覧のことで、上下キーでたどれる
 setopt hist_ignore_all_dups
 
+
+PROMPT='# '
+RPROMPT='[%d]'
+
 function peco-select-history() {
     local tac
     if which tac > /dev/null; then
