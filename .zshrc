@@ -28,6 +28,7 @@ function git_current_branch_name()
 }
 alias -g B='"$(git_current_branch_name)"'
 
+# pecoで履歴を見られる設定
 function peco-select-history() {
     local tac
     if which tac > /dev/null; then
@@ -44,5 +45,17 @@ function peco-select-history() {
 }
 zle -N peco-select-history
 bindkey '^r' peco-select-history
+
+autoload -U compinit
+compinit
+
+# lsに色を付ける設定　
+export LSCOLORS=exfxcxdxbxegedabagacad
+export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+
+alias ls="ls -GF"
+alias gls="gls --color"
+
+zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
 
 [ -f $DOTFILES_ENV/.zshrc ] && source $DOTFILES_ENV/.zshrc
